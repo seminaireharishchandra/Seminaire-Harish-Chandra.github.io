@@ -11,12 +11,12 @@
   --text-color: #1c1c1c;
   --muted-color: #666;
   --highlight-color: #A3C1AD;
-  --bg-color: #f9f9f9;
+  --bg-color: #F9F6EE;
 }
 
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  /*background: #f9f9f9;
+  /*background: #F9F6EE;
   color: var(--text-color);
   */
   background-color: var(--bg-color);
