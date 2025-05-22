@@ -1,0 +1,108 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seminaire Harish Chandra</title>
+<link rel="stylesheet" href="main.css">
+<meta name="author" content="Soham Sen">
+<meta name="description" content="Seminaire Harish Chandra's home page">
+<link rel="shortcut icon" href="assets/icons/favicon.ico">
+
+<style>
+:root {
+  --text-color: #1c1c1c;
+  --muted-color: #666;
+  --highlight-color: #1f6f3f;
+}
+</style>
+
+<!-- MathJax -->
+<script src="assets/js/math.js" type="text/javascript"> </script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="name-block">
+        <p><strong>Seminaire Harish Chandra</strong><br>
+        Department of Mathematics and Statistics, IIT Kanpur<br>
+        sohams21 at iitk.ac.in
+        </p>
+      </div>
+
+      <nav>
+        <a class="nav-link active" data-target="home">home</a>
+        <a class="nav-link" data-target="seminars">talks</a>
+        <a class="nav-link" data-target="notes">notes</a>
+        <a class="nav-link" data-target="misc">misc</a>
+      </nav>
+    </div>
+
+    <div class="content">
+      <div id="home">
+          <p>This is the homepage for Seminaire Harish Chandra 
+          starting from Fall 2025. </p>
+        
+      </div>
+
+      <div id="talks">
+
+<ul> 
+    <li> Anticyclotomic Main Conjecture</li>
+</ul>
+      </div>
+
+      <div id="notes">
+
+<ul>
+<li>Degeneration of Automorphic forms</li>
+
+</ul>
+      </div>
+
+      <div id="misc">
+
+<ul>
+    <li>Raag Puriya Dhanashree</li>
+
+</ul>
+      </div>
+    </div>
+
+    <!--
+<footer style="text-align: center; font-size: 0.8rem; color: var(--muted-color); margin-top: 2rem;">
+  <p>&copy; Soham Sen | Made by ChatGPT.</p>
+</footer>
+    -->
+  </div>
+
+<script>
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.content > div');
+
+  function activateSection(targetId) {
+    links.forEach(l => {
+      l.classList.toggle('active', l.dataset.target === targetId);
+    });
+    sections.forEach(sec => {
+      sec.classList.toggle('active', sec.id === targetId);
+    });
+  }
+
+  // Handle nav link clicks
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      const target = link.dataset.target;
+      activateSection(target);
+      history.replaceState(null, null, `#${target}`); // update URL
+    });
+  });
+
+  // Handle loading from a hash (e.g. index.html#notes)
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.slice(1);
+      const target = hash && document.getElementById(hash) ? hash : 'home';
+      activateSection(target);
+    });
+</script>
+</body>
