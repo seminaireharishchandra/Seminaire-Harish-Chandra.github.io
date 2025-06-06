@@ -2,109 +2,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Seminaire Harish Chandra</title>
-<link rel="stylesheet" href="main.css">
-<meta name="author" content="Soham Sen">
-<meta name="description" content="Seminaire Harish Chandra's home page">
+  <link rel="stylesheet" href="main.css">
+  <meta name="author" content="Soham Sen">
+  <meta name="description" content="Homepage of Seminaire Harish Chandra, IIT Kanpur.">
 
+  <style>
+    :root {
+      --text-color: #1c1c1c;
+      --muted-color: #666;
+      --highlight-color: #4B9CD3;
+    }
+  </style>
 
-<style>
-:root {
-  --text-color: #1c1c1c;
-  --muted-color: #666;
-  --highlight-color: #4B9CD3;
-}
-</style>
-
-<!-- MathJax -->
-<script src="math.js" type="text/javascript"> </script>
-<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
-
+  <!-- MathJax -->
+  <script src="math.js" type="text/javascript"> </script>
+  <script type="text/javascript" id="MathJax-script" async 
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> 
+  </script>
 </head>
+
 <body>
   <div class="container">
     <div class="header">
       <div class="name-block">
-        <p><strong>Seminaire Harish Chandra</strong>
-        
-        </p>
+        <p><strong>Seminaire Harish Chandra</strong></p>
       </div>
 
       <nav>
-        <a class="nav-link active" data-target="home">home</a>
-        <a class="nav-link" data-target="talks">talks</a>
-        <a class="nav-link" data-target="notes">notes</a>
-        <a class="nav-link" data-target="contact">contact</a>
+        <a class="nav-link active" data-target="home">Home</a>
+        <a class="nav-link" data-target="talks">Talks</a>
+        <a class="nav-link" data-target="notes">Notes</a>
+        <a class="nav-link" data-target="contact">Contact</a>
       </nav>
     </div>
 
     <div class="content">
       <div id="home">
-          <p>Homepage for Seminaire Harish Chandra based at IIT Kanpur. </p>
-        
-  <img src="bust.jpeg" alt="Bust of Harish-Chandra at Panini Library, ICTS Bangalore" style="max-width: 100%; height: auto; border-radius: 8px;">
+        <p>Welcome to the homepage of Seminaire Harish Chandra, hosted at IIT Kanpur.</p>
 
-
-        
+        <img src="bust.jpeg" 
+             alt="Bust of Harish-Chandra at the Panini Library, ICTS Bangalore" 
+             style="max-width: 100%; height: auto; border-radius: 8px;">
       </div>
 
       <div id="talks">
-
-<ul> 
-    <li>Anticyclotomic Main Conjecture for CM fields</li>
-</ul>
+        <ul> 
+          <li>The Anticyclotomic Main Conjecture for CM Fields</li>
+        </ul>
       </div>
 
       <div id="notes">
-
-<ul>
-  
-<li>Degeneration of Automorphic forms</li>
-  <li>Introduction to Gan-Gross-Prasad Conjectures</li>
-
-
-</ul>
+        <ul>
+          <li>Degenerations of Automorphic Forms</li>
+          <li>An Introduction to the Gan–Gross–Prasad Conjectures</li>
+        </ul>
       </div>
 
       <div id="contact">
-
-
-         
-         <p> sohams21 [at] iitk [dot] ac [dot] in</p>
-
-
+        <p>Email: sohams21 [at] iitk [dot] ac [dot] in</p>
       </div>
     </div>
-
-   
   </div>
 
-<script>
-  const links = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('.content > div');
+  <script>
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.content > div');
 
-  function activateSection(targetId) {
-    links.forEach(l => {
-      l.classList.toggle('active', l.dataset.target === targetId);
-    });
-    sections.forEach(sec => {
-      sec.classList.toggle('active', sec.id === targetId);
-    });
-  }
+    function activateSection(targetId) {
+      links.forEach(l => {
+        l.classList.toggle('active', l.dataset.target === targetId);
+      });
+      sections.forEach(sec => {
+        sec.classList.toggle('active', sec.id === targetId);
+      });
+    }
 
-  // Handle nav link clicks
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      const target = link.dataset.target;
-      activateSection(target);
-      history.replaceState(null, null, `#${target}`); // update URL
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        const target = link.dataset.target;
+        activateSection(target);
+        history.replaceState(null, null, `#${target}`);
+      });
     });
-  });
 
-  // Handle loading from a hash (e.g. index.html#notes)
     window.addEventListener('load', () => {
       const hash = window.location.hash.slice(1);
       const target = hash && document.getElementById(hash) ? hash : 'home';
       activateSection(target);
     });
-</script>
+  </script>
 </body>
