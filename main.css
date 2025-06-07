@@ -48,6 +48,22 @@ a {
   margin-bottom: 60px;
 }
 
+.list-container {
+         counter-reset: list-counter;
+}
+.list-item {
+         display: flex; 
+         align-items: center;
+}
+.list-item::before {
+         content: counter(list-counter) ". ";
+         margin-right: 10px; 
+         font-weight: bold; 
+}
+.list-item {
+         counter-increment: list-counter;
+}
+
 .name-block {
   flex-grow: 1;
   min-width: 250px;
