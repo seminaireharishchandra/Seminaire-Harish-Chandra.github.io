@@ -28,18 +28,18 @@ body {
 body {
 }
 table {
-  border-collapse: collapse; /* Removes space between cells */
-  width: 100%; /* Makes the table span the entire width */
+  border-collapse: collapse; 
+  width: 100%; 
 }
 
 th, td {
-  border: 1px solid black; /* Adds borders to cells */
-  padding: 8px; /* Adds some spacing inside cells */
-  text-align: left; /* Aligns text within cells to the left */
+  border: 1px solid black; 
+  padding: 8px; 
+  text-align: left; 
 }
 
 th {
-  background-color: #f2f2f2; /* Sets a background color for header cells */
+  background-color: #f2f2f2; 
 }
 
 .container {
